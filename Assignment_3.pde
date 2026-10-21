@@ -1,8 +1,7 @@
 boolean inTitleScreen = true;
-String easyLetterOptions;
-int difficulty = 0;
-char easyletterA;
-int score = 0;
+char currentLetter = 'A';
+char[] easyLetters = {'a', 'w'};
+
 
 void setup () {
   size(700,450);
@@ -45,14 +44,9 @@ void mousePressed () {
   int easyMaxY = easyMinY + 50;
   if (mouseX >= easyMinX && mouseX <= easyMaxX && mouseY >= easyMinY && mouseY <= easyMaxY) {
   inTitleScreen = false;
-  difficulty = 1; 
   println("Easy mode selected");
   background(100,100,200);
-  textSize(50);
-  easyLetterOptions = "A";
-  text("Type: " + easyLetterOptions, 250, 200);
- 
-  
+
   
   }
   
@@ -62,12 +56,9 @@ void mousePressed () {
   int mediumMaxY = mediumMinY + 50;
   if (mouseX >= mediumMinX && mouseX <= mediumMaxX && mouseY >= mediumMinY && mouseY <= mediumMaxY) {
   inTitleScreen = false;
-  difficulty = 1;
   println("Medium mode selected");
   background(49,102,80);
   textSize(50);
-  text("Type: ", 250, 200);
-  
   }
   
   int hardMinX = 480;
@@ -79,6 +70,5 @@ void mousePressed () {
   println("Hard mode selected");
   background(245,64,33);
   textSize(50);
-  text("Type: ", 250, 200);
   }
 }
