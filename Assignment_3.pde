@@ -1,6 +1,11 @@
 boolean inTitleScreen = true;
+int difficulty = 0;
+int screen = 0;
 char currentLetter = 'A';
 char[] easyLetters = {'a', 'w'};
+char[] mediumLetters = {'t','e', 't', 'y'};
+char[] hardLetters = {'q', 'w', 'e', 'r', 't', 'y'};
+
 
 
 void setup () {
@@ -8,34 +13,38 @@ void setup () {
 }
 
 void draw () {
-  if (inTitleScreen) {
-  background(25,28,100);
+  // screen 1 is the main menu screen and screen 2 is the game area
+  if (screen == 1) {
+    if (inTitleScreen) {
+    background(25,28,100);
   
-  fill(255,255,255);
-  textSize(40);
-  text("Typing Test . Select a difficulty", 100, 70);
+    fill(255,255,255);
+    textSize(40);
+    text("Typing Test . Select a difficulty", 100, 70);
   
-  fill(0, 155, 0);
-  rect(80,250,130,50);
-  textSize(30);
-  fill(255,255,255);
-  text("Easy", 115, 290);
+    fill(0, 155, 0);
+    rect(80,250,130,50);
+    textSize(30);
+    fill(255,255,255);
+    text("Easy", 115, 290);
   
-  fill(255, 170, 0);
-  rect(280,250,130,50);
-  textSize(30);
-  fill(255,255,255);
-  text("Medium", 295, 290);
+    fill(255, 170, 0);
+    rect(280,250,130,50);
+    textSize(30);
+    fill(255,255,255);
+    text("Medium", 295, 290);
   
-  fill(200, 0, 0);
-  rect(480,250,130,50);
-  textSize(30);
-  fill(255,255,255);
-  text("Hard", 515, 290);
+    fill(200, 0, 0);
+    rect(480,250,130,50);
+    textSize(30);
+    fill(255,255,255);
+    text("Hard", 515, 290);
+  }
+ } else if (screen == 2) {
+  background(100,100,200);
+}
   
 
-  }
-}
 
 void mousePressed () {
   int easyMinX = 80;
@@ -43,9 +52,10 @@ void mousePressed () {
   int easyMinY = 250;
   int easyMaxY = easyMinY + 50;
   if (mouseX >= easyMinX && mouseX <= easyMaxX && mouseY >= easyMinY && mouseY <= easyMaxY) {
+   screen == 2;
   inTitleScreen = false;
   println("Easy mode selected");
-  background(100,100,200);
+  
 
   
   }
