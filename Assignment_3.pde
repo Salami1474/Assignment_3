@@ -1,3 +1,4 @@
+//Used AI for most of my comments
 boolean inTitleScreen = true; // Checks if the main menu is showing
 int difficulty; // Stores the selected difficulty
 int screen = 0; // 0 = menu, 1 = Easy, 2 = Medium, 3 = Hard
