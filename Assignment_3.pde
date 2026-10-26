@@ -1,6 +1,6 @@
 boolean inTitleScreen = true; // Checks if the main menu is showing
 int difficulty; // Stores the selected difficulty
-int screen = 0; // 0 = menu, 1 = Easy, 2 = Medium, 3 = Hard
+int screen = 0; // 0 is menu, 1 is Easy, 2 is Medium, 3 is Hard
 
 char currentLetter = 'A'; // The letter the player must type
 String letterOptions;
@@ -9,27 +9,27 @@ String messageN = "That's wrong"; // Wrong-answer message
 String mainMenu = "Press the key 'M' to go back to the main menu page"; // Used to display the key users can use to go back to main menu
 String youWin = "You pass this round! Press 'M' to choose a new difficulty!"; // Displayed when the user hits the score limit
 
-int correctAnswers = 0; // Counts correct answers
-boolean gameOver = false; // Tracks whether the game is over
-boolean answered = false; // Tracks whether an answer was given
+int correctAnswers = 0; // Counts the correct answers
+boolean gameOver = false; // is tracking whether the game is over
+boolean answered = false; // is tracking whether an answer was given
 int score = 0; // Stores the player's score
 boolean levelFinished = false; // Stops typing when the score reaches 2150
 
 
 
-// Coordinates for the Easy button
+// Coordinates for where the Easy button should be
 int easyMinX = 80;
 int easyMaxX = easyMinX + 130;
 int easyMinY = 250;
 int easyMaxY = easyMinY + 50;
 
-// Coordinates for the Medium button
+// Coordinates for where the Medium button should be
 int mediumMinX = 280;
 int mediumMaxX = mediumMinX + 130;
 int mediumMinY = 250;
 int mediumMaxY = mediumMinY + 50;
 
-// Coordinates for the Hard button
+// Coordinates for where the Hard button should be
 int hardMinX = 480;
 int hardMaxX = hardMinX + 130;
 int hardMinY = 250;
@@ -41,7 +41,7 @@ boolean showMessage = false; // Controls whether the answer message appears
 color gameBg; // Stores the game's background colour
 
 void setup() {
-  size(700, 450); // Sets the game window size
+  size(700, 450); 
 }
 
 void draw() {
@@ -56,21 +56,21 @@ void draw() {
       fill(255, 255, 255);
       text("Typing Test . Select a difficulty", 100, 70);
 
-      // Draw the Easy button
+      // Draws the Easy button
       fill(0, 155, 0);
       rect(easyMinX, easyMinY, 130, 50);
       textSize(30);
       fill(255, 255, 255);
       text("Easy", 115, 290);
 
-      // Draw the Medium button
+      // Draws the Medium button
       fill(255, 170, 0);
       rect(mediumMinX, mediumMinY, 130, 50);
       textSize(30);
       fill(255, 255, 255);
       text("Medium", 295, 290);
 
-      // Draw the Hard button
+      // Draws the Hard button
       fill(200, 0, 0);
       rect(hardMinX, hardMinY, 130, 50);
       textSize(30);
@@ -78,7 +78,7 @@ void draw() {
       text("Hard", 515, 290);
     }
 
-  // Screen 1 displays Easy mode
+  // Screen 1 displays the Easy mode
   } else if (screen == 1) {
     background(gameBg);
     textAlign(CENTER, CENTER);
@@ -91,7 +91,7 @@ void draw() {
     textSize(70);
     text(currentLetter, 350, 400);
 
-  // Screen 2 displays Medium mode
+  // Screen 2 displays the Medium mode
   } else if (screen == 2) {
     background(gameBg);
     textAlign(CENTER, CENTER);
@@ -104,7 +104,7 @@ void draw() {
     textSize(70);
     text(currentLetter, 350, 400);
 
-  // Screen 3 displays Hard mode
+  // Screen 3 displays the Hard mode
   } else if (screen == 3) {
     background(gameBg);
     textAlign(CENTER, CENTER);
@@ -126,7 +126,7 @@ void draw() {
       fill(255, 255, 255);
       text(messageY, 350, 300);
     } else {
-      showMessage = false; // Hide the message after half second
+      showMessage = false; // Hide the message after half of a second
     }
   }
 
@@ -322,6 +322,6 @@ void keyPressed() {
   }
   // Finish the level when the score reaches 150
   if (score >= 150) {
-    levelFinished = true; // Stop accepting further typing input
+    levelFinished = true; // Stop accepting further letter inputs
   }
 }
